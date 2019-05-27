@@ -11,6 +11,6 @@
       "sizes": "192x192",
       "type": "image/png"
     }],
-  "start_url": "../html/indx.html",
+  "start_url": "../html/",
   "display": "standalone"
 }
