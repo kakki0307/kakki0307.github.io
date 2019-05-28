@@ -19,4 +19,6 @@
 .con p{
   width: 33%;
   text-align: center;
+  margin: 15%
+  border: solid 1px black;
 }
