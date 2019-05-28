@@ -11,6 +11,6 @@
       "sizes": "192x192",
       "type": "image/png"
     }],
-  "start_url": "kakki0307.github.io/html/customerTop/index.html",
+  "start_url": "./html/customerTop/index.html",
   "display": "standalone"
 }
