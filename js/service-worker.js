@@ -99,7 +99,7 @@ self.addEventListener('fetch', function(event) {
             return response;
           }
           //オフラインでキャッシュもなかったパターン
-          return caches.match("../html/off/offline.html")
+          return caches.match("../off/offline.html")
               .then(function(responseNodata)
               {
                 console.log('erroroffhtml');
