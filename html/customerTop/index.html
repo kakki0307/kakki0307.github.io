@@ -3,12 +3,7 @@
   <!-- manifest.jsonを呼び出しています -->
   <link rel="manifest" href="../../manifest.json">
   <link rel="stylesheet" href="../../css/index.css">
-  <script>
-    // service workerが有効なら、service-worker.js を登録します
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('../../js/service-worker.js').then(function() { console.log('Service Worker Registered'); });
-  }
-  </script>
+  <script src="../../js/sv.js"></script>
   <title>github pages test</title>
 </head>
 <body>
