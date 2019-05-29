@@ -1,0 +1,20 @@
+<html>
+<head>
+  <!-- manifest.jsonを呼び出しています -->
+  <link rel="manifest" href="../../manifest.json">
+  <script>
+    // service workerが有効なら、service-worker.js を登録します
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../../js/service-worker.js').then(function() { console.log('Service Worker Registered'); });
+  }
+  </script>
+  <title>github pages test3</title>
+</head>
+<body>
+  <h1>github pages test3</h1>
+  <h2>tes<h2>
+    <p>tes</p>
+    <p>tes</p>
+    <a href="./index.html">リンク</a>
+</body>
+</html>
