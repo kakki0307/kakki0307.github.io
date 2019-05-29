@@ -94,7 +94,7 @@ self.addEventListener('fetch', function(event) {
             return response;
           }
           //オフラインでキャッシュもなかったパターン
-          return caches.match("offline.html")
+          return caches.match("../html/off/offline.html")
               .then(function(responseNodata)
               {
                 //適当な変数にオフラインのときに渡すリソースを入れて返却
