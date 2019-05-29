@@ -13,5 +13,6 @@
       "type": "image/png"
     }],
   "start_url": "./html/customerTop/index.html",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "portrait"
 }
