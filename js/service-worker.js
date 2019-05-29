@@ -91,11 +91,11 @@ self.addEventListener('fetch', function(event) {
   }else{
     //オフラインのときの制御
     event.respondWith(
-      console.log('erroroffc');
       caches.match(event.request)
         .then(function(response) {
           // キャッシュがあったのでそのレスポンスを返す
           if (response) {
+            console.log('erroroffc');
             return response;
           }
           //オフラインでキャッシュもなかったパターン
