@@ -87,6 +87,7 @@ self.addEventListener('fetch', function(event) {
   }else{
     //オフラインのときの制御
     event.respondWith(
+      console.log('erroroffc');
       caches.match(event.request)
         .then(function(response) {
           // キャッシュがあったのでそのレスポンスを返す
@@ -97,6 +98,7 @@ self.addEventListener('fetch', function(event) {
           return caches.match("../html/off/offline.html")
               .then(function(responseNodata)
               {
+                console.log('erroroffhtml');
                 //適当な変数にオフラインのときに渡すリソースを入れて返却
                 //今回はoffline.htmlを返しています
                 return responseNodata;
