@@ -20,6 +20,7 @@ self.addEventListener('install', function(event) {
           .then(
           function(cache){
               return cache.addAll(urlsToCache); // 指定したリソースをキャッシュへ追加
+              console.log(urlsToCache);
               // 1つでも失敗したらService Workerのインストールはスキップされる
           })
     );
@@ -33,6 +34,7 @@ self.addEventListener('activate', event => {
           return !CACHE_KEYS.includes(key);
         }).map(key => {
           // 不要なキャッシュを削除
+          console.log(key);
           return caches.delete(key);
         })
       );
@@ -46,11 +48,13 @@ self.addEventListener('fetch', function(event) {
 
   //回線が使えるときの処理
   if(online){
+    console.log('on');
     event.respondWith(
       caches.match(event.request)
         .then(
         function (response) {
           if (response) {
+            console.log('onres');
             return response;
           }
           //ローカルにキャッシュがあればすぐ返して終わりですが、
