@@ -1,6 +1,7 @@
 var CACHE_NAME  = "MKit-cache-v1";
 var urlsToCache = [
-    "../html/"
+    "../html/",
+    "../img/icon/"
 ];
 
 self.addEventListener('install', function(event) {
