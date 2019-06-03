@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../css/TabStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../css/html5reset-1.6.1.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <title>tabテスト</title>
+  </head>
+  <body>
+    <header>
+      <h1>クローゼット</h1>
+    </header>
+    <div class="tab-menu">
+    	<ul class="tab">
+    		<li class="tab-active"><span class="border-w"></span>タブ1</li>
+    		<li><span></span>タブ2</li>
+    	</ul>
+    	<ul class="tab-content">
+    		<li>
+    			<p>コンテンツ1</p>
+    		</li>
+    		<li>
+    			<p>コンテンツ2</p>
+    		</li>
+    	</ul>
+    </div>
+    <!-- jQueryによるスクリプト -->
+    <script>
+      $(function() {
+        $(".tab li").click(function() {
+        	var index = $(".tab li").index(this); //クリックしたタブのインデックス番号を変数indexに代入
+        	$(".tab li").removeClass("tab-active"); //タブの装飾
+        	$(this).addClass("tab-active"); //タブの装飾
+        	$(".tab li span").removeClass("border-w"); //タブの装飾(ボーダーを消す)
+        	$(this).children("span").addClass("border-w"); //タブの装飾(ボーダーを消す)
+        	$(".tab-content > li").hide(); //全てのコンテンツを一旦隠す
+        	$(".tab-content > li").eq(index).show(); //クリックしたタブに対応するコンテンツを表示
+        });
+      });
+
+    </script>
+  </body>
+</html>
