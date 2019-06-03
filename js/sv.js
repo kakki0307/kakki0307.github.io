@@ -10,5 +10,3 @@ if ('serviceWorker' in navigator) {
     console.log("Error Log: " + error);
   });
 }
-
-import './stay_standalone';
