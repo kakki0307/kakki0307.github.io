@@ -9,12 +9,14 @@
     <!--<link rel="apple-touch-icon" href="../../img/icon/icon-256.png" sizes="256x256"/>-->
     <!--<link rel="apple-touch-icon" href="../../img/icon/icon-512.png" sizes="512x512"/>-->
     <!--<script src="../../js/sv.js"></script>-->
-    <link rel="stylesheet" href="css/lightbox.css">
+    <!--<link rel="stylesheet" href="css/lightbox.css">-->
     <link rel="stylesheet" href="css/index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-center-circle.min.css" />
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-center-circle.min.css" />-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-    <script src="js/lightbox.js"></script>
+    <!--<script src="js/lightbox.js"></script>-->
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
     <script>
         window.onload = function(){
             // ページ読み込み時に実行したい処理
@@ -41,13 +43,13 @@
         // }
         function tommy(){
             swal({
-                title: '<img src="image0.jpg">',
+                title: '<img src="image0.jpg" height="300px">',
                 text: '<span style="color:rgb(64, 69, 75);">スタッフにQRコードをお見せください</span>',
                 showConfirmButton: false,
                 showCancelButton: true,
                 confirmButtonColor: "#EBA543",
                 cancelButtonText: "閉じる",
-                timer: 300000, // 3分後に自動的にアラートを閉じる
+                timer: 300, // 3分後に自動的にアラートを閉じる
                 closeOnConfirm: false,
                 html: true
             }, function() {
@@ -55,12 +57,56 @@
                 // window.location.href = '{{base_url}}shop/staff/present/?m='+id+'&p='+point;
             });
         };
+        function kimawasi() {
+            swal({
+                title: '着回しを設定しますか？',
+                buttons: true,
+                showCancelButton: true,
+                confirmButtonText:"はい",
+                cancelButtonText: "いいえ",
+                cancelButtonColor:"orange",
+
+
+            })
+        }
+        function test() {
+            swal({
+                title:"着回しを設定しますか？",
+                buttons: {
+                    catch: {
+                        text: "はい",
+                        value: "yes",
+                        className: "button"
+                    },
+                    catch2: {
+                        text: "いいえ",
+                        value: "no",
+                        className: "button"
+                    }
+                },
+            })
+                .then((value) => {
+                    switch (value) {
+                        case "yes":
+                            location.href="transition.html";
+                            break;
+
+                        case "no":
+                            location.href="transition.html";
+                            break;
+
+                    }
+                });
+        }
     </script>
 </head>
 <body>
 <h1>スウィートトミーのページ</h1>
     <div id="div1">
-        <input type="button" value="冨谷" onclick="tommy();">
+        <input type="button" value="冨谷" onclick="tommy();"><br>
+        <input type="button" value="着回し" onclick="kimawasi();">
+        <input type="button" value="テスト" onclick="test();">
+        <div id="output"></div>
     </div>
 
     <div id="div2">
