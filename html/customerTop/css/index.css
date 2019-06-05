@@ -32,7 +32,8 @@
     background-color: coral;
 }
 .swal-modal {
-    width: 300px;
+    width: 50vw;
+    height: 20vh;
 }
 .swal-footer {
     text-align: center;
