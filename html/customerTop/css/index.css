@@ -31,16 +31,20 @@
 .button {
     background-color: coral;
 }
+/*モーダル*/
 .swal-modal {
     width: 50vw;
     height: 20vh;
 }
+/*モーダルのボタンの部分*/
 .swal-footer {
     text-align: center;
 }
+/*ボタンの文字？*/
 .swal-button-container {
     margin: 0 20px;
 }
+/*ボタン*/
 .swal-button{
     border-radius:20px;
 }
