@@ -24,29 +24,22 @@
 }
 
 .swal-title {
-    height: 40%;
     font-size: 16px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
-    text-align: center;
-    line-height: 100%;
+    margin-bottom: 28px;
 }
 .button {
     background-color: coral;
 }
-/*モーダル*/
 .swal-modal {
-    width: 50vw;
-    height: 20vh;
+    width: 300px;
 }
-/*モーダルのボタンの部分*/
 .swal-footer {
     text-align: center;
 }
-/*ボタンの文字？*/
 .swal-button-container {
-    margin: 0 20px
+    margin: 0 20px;
 }
-/*ボタン*/
 .swal-button{
     border-radius:20px;
 }
