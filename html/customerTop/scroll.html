@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <script src="../../js/jquery-1.9.1.js"></script>
+    <script>
+    let triggerFlag = false;
+    $(window).on('load scroll', function () {
+        let documentHeight= $(document).height(),
+            scrollBottomPosition = $(window).height() + $(window).scrollTop(),
+            triggerPoint = documentHeight - scrollBottomPosition;
+        if (!triggerFlag && triggerPoint <= 50) {
+            triggerFlag = true;
+            $.ajax({
+                type: 'GET',
+                url: './scrollJson.php',
+            }).done(function (data) {
+                var dataArray = JSON.parse(data);
+                $.each(dataArray, function (i,h) {
+                 console.log(dataArray[i][1]);
+                //     let img = '<img src="../visual/' + dataArray[i].file_name + '" class="img-responsive">';
+                //     $('#blog_entry').append('<article>' +
+                //         '<h2>' + dataArray[i].title + '</h2>' +
+                //         img +
+                //         '<p>' + dataArray[i].release_date + '</p>' +
+                //         '</article>');
+                });
+            }).fail(function () {
+                return false;
+            });
+        }
+        if (triggerPoint >= 51) {
+            triggerFlag = false;
+        }
+    });
+    </script>
+    <link rel="stylesheet" type="text/css" href="../../css/html5reset-1.6.1.css">
+    <link rel="stylesheet" type="text/css" href="../../css/scroll.css">
+    <title></title>
+  </head>
+  <body>
+    <div id="wapper">
+    </div>
+  </body>
+</html>
